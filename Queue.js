@@ -1,10 +1,26 @@
 const Utility = require('./Utility');
 let readlineSync = require('readline-sync')
-/** enter the element in the queue */
-let element = readlineSync.question("Enter the element:");
-let enqueueElement = Utility.enqueue(element);
-console.log(enqueueElement); 
-/** deleted element in the queue */              
-let dequeueElement = Utility.dequeue();
-console.log(dequeueElement);
- 
+choice = function () {
+    let isTerminated = true;
+    while (isTerminated == true) {
+        /** take choice input from the user */
+        let choice = readlineSync.question("\nEner your choice:\n1.enqueue\n2.dequeue\n3.print\nn4.exit\n");
+        switch (choice) {
+            case '1':
+                let element = readlineSync.question("Enter the element:");
+                Utility.enqueue(element);
+                break;
+            case '2':
+                Utility.dequeue();
+                break;
+            case '3':
+                Utility.print();
+                break;
+            case '4':
+                isTerminated = false;
+                break;
+            default: console.log("please enter correct option");
+        }
+    }
+}
+choice();

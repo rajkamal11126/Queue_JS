@@ -13,17 +13,24 @@ class Queue {
             return this.rear;   // return the element
         }
     }
-    isEmpty() {
+    /** method for check the data is empty or not */
+    isEmpty = () => {
 
         return this.rear === 0;
     }
     /** method for delete the element */
-    dequeue() {
+    dequeue = () => {
 
         if (this.isEmpty() === false) {
 
             this.rear = this.rear - 1;
             return this.data.shift(); //return the deleted element
+        }
+    }
+    /** To display the element of the queue */
+    print = () => {
+        for (let i = 0; i < this.rear; i++) {
+            console.log(this.data[i]);
         }
     }
 }
