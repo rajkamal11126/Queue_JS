@@ -4,7 +4,7 @@ choice = function () {
     let isTerminated = true;
     while (isTerminated == true) {
         /** take choice input from the user */
-        let choice = readlineSync.question("\nEner your choice:\n1.enqueue\n2.dequeue\n3.print\nn4.exit\n");
+        let choice = readlineSync.question("\nEner your choice:\n1.enqueue\n2.dequeue\n3.print\n4.frontElement\n5.exit\n");
         switch (choice) {
             case '1':
                 let element = readlineSync.question("Enter the element:");
@@ -15,6 +15,10 @@ choice = function () {
                 break;
             case '3':
                 Utility.print();
+                break;
+            case '4':
+               frontElement = Utility.getFront();
+               console.log(frontElement);
                 break;
             case '4':
                 isTerminated = false;

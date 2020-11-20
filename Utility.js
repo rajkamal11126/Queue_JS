@@ -15,14 +15,11 @@ class Queue {
     }
     /** method for check the data is empty or not */
     isEmpty = () => {
-
         return this.rear === 0;
     }
     /** method for delete the element */
     dequeue = () => {
-
         if (this.isEmpty() === false) {
-
             this.rear = this.rear - 1;
             return this.data.shift(); //return the deleted element
         }
@@ -31,6 +28,12 @@ class Queue {
     print = () => {
         for (let i = 0; i < this.rear; i++) {
             console.log(this.data[i]);
+        }
+    }
+    /** method for find the front element */
+    getFront = () => {
+        if (this.isEmpty() === false) {
+            return this.data[0]; //return the front element of queue
         }
     }
 }
