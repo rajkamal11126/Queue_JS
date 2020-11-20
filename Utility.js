@@ -36,5 +36,11 @@ class Queue {
             return this.data[0]; //return the front element of queue
         }
     }
+    /** method for find the last element */
+    getLast = () => {
+        if(this.isEmpty() === false) {
+             return this.data[ this.rear - 1 ] ; // return last element of queue
+        }
+     }
 }
 module.exports = new Queue();
